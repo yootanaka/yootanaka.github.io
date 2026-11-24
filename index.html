@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yoshitaka Tanaka</title>
+<meta name="description" content="魚類と両生類の進化発生学と比較ゲノミクス">
+<link rel="alternate" hreflang="en" href="en/index.html">
+<link rel="icon" href="/files/icon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/files/icon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/files/icon/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">Yoshitaka Tanaka</a>
+    <nav>
+      <a href="index.html" aria-current="page">Top</a>
+      <a href="profile.html">Profile</a>
+      <a href="research.html">Research</a>
+      <a href="updates.html">Updates</a>
+      <a class="lang" href="en/index.html" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<section class="hero">
+  <h1><span>田中 祥貴</span><span class="sub">Yoshitaka Tanaka, Ph.D.</span></h1>
+  <address>
+    <span><a href="https://www.hiroshima-u.ac.jp//">広島大学</a> <a href="https://amphibian.hiroshima-u.ac.jp/">両生類研究センター</a> 助教</span><br>
+    <span>〒739-8526 広島県東広島市鏡山1-3-1</span><br>
+    E-mail: <span class="mail" data-user="yotanaka" data-domain="hiroshima-u.ac.jp">name [at] example.ac.jp</span>
+  </address>
+  <ul class="ids">
+    <li><a href="https://researchmap.jp/yoshitaka.tanaka/">researchmap</a></li>
+    <li><a href="https://orcid.org/0009-0001-9887-1503/">ORCID</a></li>
+    <li><a href="https://scholar.google.com/citations?user=2GogFeEAAAAJ&hl/">Google Scholar</a></li>
+  </ul>
+</section>
+
+<section>
+  <p class="lead">魚類と両生類を題材に、魚の体が頭から尾へどのように区画されるのか、その仕組みがどのように進化してきたのかを、胚を用いた発生学的解析と、数十種にわたる比較ゲノム解析を組み合わせて研究しています。</p>
+
+  <h2>研究キーワード</h2>
+  <ul class="keywords">
+    <li>魚類</li><li>両生類</li><li>メダカ</li><li>ゼブラフィッシュ</li><li>ツメガエル</li>
+    <li>進化発生学</li><li>発生遺伝学</li><li>比較ゲノミクス</li><li>全ゲノム重複</li><li>系統比較法</li>
+  </ul>
+</section>
+
+<section>
+  <h2>更新情報</h2>
+  <ul class="updates" data-updates data-limit="5"></ul>
+  <p class="more"><a href="updates.html">すべての更新情報</a></p>
+</section>
+</main>
+
+<footer class="wrap site-footer">
+  <p>© 2026 Yoshitaka Tanaka</p>
+</footer>
+<script>
+// メールアドレスを表示時に組み立てる（自動収集されにくくするため）
+document.querySelectorAll('.mail[data-user]').forEach(function (el) {
+  var m = el.dataset.user + '@' + el.dataset.domain;
+  var a = document.createElement('a');
+  a.href = 'mailto:' + m; a.textContent = m;
+  el.replaceWith(a);
+});
+</script>
+<script src="assets/updates.js"></script>
+</body>
+</html>

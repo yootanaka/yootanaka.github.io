@@ -1,0 +1,144 @@
+/* ==================================================
+   サイト全体の見た目
+   色を変えたいときは :root の --accent と --accent-soft だけ変えれば十分です。
+   ================================================== */
+:root {
+  --bg: #ffffff;
+  --text: #1e2233;
+  --muted: #5a6170;
+  --line: #e2e5ea;
+  --accent: #4b3a8c;       /* リンク・見出しの線 */
+  --accent-soft: #eeebf7;  /* キーワードの背景など */
+  --max: 820px;            /* 本文の最大幅 */
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+}
+:lang(en) body, html:lang(en) body { line-height: 1.7; }
+
+a { 
+  color: var(--accent);
+  text-decoration: none;   /* 下線を消す */
+}
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* ---------- ヘッダー ---------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  position: sticky;      /* スクロールしても貼り付く */
+  top: 0;                /* 画面の上端 0px の位置で止まる */
+  z-index: 10;           /* 本文より手前に重ねる */
+  background: var(--bg); /* 背景を塗る（ないと下の本文が透けて見える） */
+}
+.bar {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px 24px; padding-top: 14px; padding-bottom: 14px;
+}
+.brand { font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; font-size: 0.92rem; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--accent); }                       /* メニュー全体：文字色だけ */
+nav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
+nav a.lang {
+  border: 1px solid var(--line); border-radius: 4px; padding: 0 8px;
+}
+nav a.lang:hover,
+nav a.lang:focus-visible {                                  /* 言語ボタン：縁の色も */
+  border-color: var(--accent);
+}
+
+/* ---------- 共通 ---------- */
+main.wrap { padding-top: 36px; padding-bottom: 56px; }
+h1, h2, h3 { line-height: 1.4; }
+h1.page { font-size: 1.8rem; margin: 0 0 20px; }
+h2 {
+  font-size: 1.2rem; margin: 44px 0 14px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.lead { font-size: 1.05rem; }
+.note { color: var(--muted); font-size: 0.88rem; }
+.meta { display: block; color: var(--muted); font-size: 0.88rem; }
+
+/* 未記入の目印（書き換えたら class="todo" を消す） */
+.todo { background: #fff1b8; }
+
+/* ---------- Top ---------- */
+.hero h1 { font-size: 2.2rem; margin: 0 0 14px; }
+.hero h1 .sub { display: block; font-size: 1rem; font-weight: 400; color: var(--muted); }
+address { font-style: normal; margin-bottom: 18px; }
+
+.ids { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.ids a { display: inline-block; padding: 4px 14px; border: 1px solid var(--line); border-radius: 99px; background: var(--surface); font-size: .9rem; }
+.ids a:hover { border-color: var(--accent); text-decoration: none; }
+
+.keywords { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.keywords li { background: var(--accent-soft); padding: 2px 12px; border-radius: 4px; font-size: 0.92rem; }
+
+/* ---------- News ---------- */
+ul.updates { list-style: none; padding: 0; margin: 0; }
+ul.updates li {
+  display: grid; grid-template-columns: 6.5em 1fr; gap: 0 16px;
+  padding: 8px 0; border-bottom: 1px solid var(--line);
+}
+ul.updates time { color: var(--muted); font-size: 0.9rem; font-variant-numeric: tabular-nums; padding-top: 2px; }
+.more { text-align: right; font-size: 0.92rem; margin-top: 10px; }
+@media (max-width: 640px) {
+  ul.updates li { grid-template-columns: 1fr; }
+}
+
+/* ---------- Profile ---------- */
+dl.cv { display: grid; grid-template-columns: 12em 1fr; gap: 8px 20px; margin: 0; }
+dl.cv dt { color: var(--muted); font-size: 0.9rem; font-variant-numeric: tabular-nums; padding-top: 2px; }
+dl.cv dd { margin: 0; }
+ul.plain { padding-left: 1.2em; }
+
+/* ---------- Research ---------- */
+.topic { padding-left: 18px; border-left: 3px solid var(--accent-soft); margin-top: 36px; }
+.topic h2 { border-bottom: 0; margin-top: 0; padding-bottom: 0; }
+.refs { font-size: 0.9rem; color: var(--muted); margin-top: 10px; }
+.refs ul { list-style: none; padding: 0; margin: 2px 0 0; }
+
+/* ---------- Publications ---------- */
+ol.pubs { padding-left: 2.4em; margin: 0; }
+ol.pubs li { margin-bottom: 18px; }
+ol.pubs li::marker { color: var(--muted); font-size: 0.85rem; }
+ol.pubs .title, ol.pubs .authors, ol.pubs .venue { display: block; }
+ol.pubs .title { font-weight: 600; color: var(--text); text-decoration: none; }
+ol.pubs a.title:hover { color: var(--accent); text-decoration: underline; }
+ol.pubs .authors { color: var(--muted); font-size: 0.92rem; }
+ol.pubs .authors strong { color: var(--text); }
+ol.pubs sup { color: var(--accent); }
+ol.pubs .venue { font-size: 0.92rem; }
+
+/* ---------- 図 ---------- */
+figure { margin: 28px 0; }
+figure img {
+  display: block;
+  max-width: 100%;   /* 本文の幅より大きければ縮める */
+  height: auto;      /* 縮めた幅に合わせて高さも比率どおりに */
+  border-radius: 4px;
+}
+figcaption { margin-top: 8px; font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+/* ---------- フッター ---------- */
+.site-footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 0.82rem; padding-top: 14px; padding-bottom: 32px; }
+
+/* ---------- スマホ ---------- */
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  nav { gap: 2px 14px; font-size: 0.86rem; }
+  .hero h1 { font-size: 1.8rem; }
+  dl.cv { grid-template-columns: 1fr; gap: 0; }
+  dl.cv dd { margin-bottom: 12px; }
+}

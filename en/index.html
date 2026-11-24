@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yoshitaka Tanaka</title>
+<meta name="description" content="Developmental genetics and comparative genomics of teleost fishes (medaka, zebrafish, red seabream).">
+<link rel="alternate" hreflang="ja" href="../index.html">
+<link rel="icon" href="/files/icon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/files/icon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/files/icon/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">Yoshitaka Tanaka</a>
+    <nav>
+      <a href="index.html" aria-current="page">Top</a>
+      <a href="profile.html">Profile</a>
+      <a href="research.html">Research</a>
+      <a href="updates.html">Updates</a>
+      <a class="lang" href="../index.html" hreflang="ja">JA</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<section class="hero">
+  <h1>Yoshitaka Tanaka, Ph.D.<span class="sub"><span>田中 祥貴</span></span></h1>
+  <address>
+    <span>Assistant Professor</span><br>
+    <span><a href="https://www.hiroshima-u.ac.jp/en">Hiroshima University</a>, <a href="https://amphibian.hiroshima-u.ac.jp/">Amphibian Research Center</a></span><br>
+    <br>
+    <span>1-3-1 Kagamiyama, Higashi-Hiroshima City, Hiroshima, 739-8526, Japan</span><br>
+    Tel: <span>+81-082-424-7328</span><br>
+    E-mail: <span class="mail" data-user="yotanaka" data-domain="hiroshima-u.ac.jp">name [at] example.ac.jp</span>
+  </address>
+  <ul class="ids">
+    <li><a href="https://researchmap.jp/yoshitaka.tanaka?lang=en">researchmap</a></li>
+    <li><a href="https://orcid.org/0009-0001-9887-1503/">ORCID</a></li>
+    <li><a href="https://scholar.google.com/citations?user=2GogFeEAAAAJ&hl/">Google Scholar</a></li>
+  </ul>
+</section>
+
+<section>
+  <p class="lead">Using teleost fishes (medaka, zebrafish and red seabream), I study how the fish body is laid out along the head-to-tail axis and how this patterning has evolved, combining embryology with comparative genomics across dozens of species.</p>
+
+  <h2>Keywords</h2>
+  <ul class="keywords">
+    <li>Fish</li><li>Amphibian</li><li>Medaka</li><li>Zebrafish</li><li>Teleosts</li>
+    <li>Evo-devo</li><li>Developmental genetics</li><li>Comparative genomics</li><li>Whole-genome duplication</li><li>Phylogenetic comparative methods</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Updates</h2>
+  <ul class="updates" data-updates data-limit="5"></ul>
+  <p class="more"><a href="updates.html">All updates</a></p>
+</section>
+</main>
+
+<footer class="wrap site-footer">
+  <p>© 2026 Yoshitaka Tanaka</p>
+</footer>
+<script>
+// メールアドレスを表示時に組み立てる（自動収集されにくくするため）
+document.querySelectorAll('.mail[data-user]').forEach(function (el) {
+  var m = el.dataset.user + '@' + el.dataset.domain;
+  var a = document.createElement('a');
+  a.href = 'mailto:' + m; a.textContent = m;
+  el.replaceWith(a);
+});
+</script>
+<script src="../assets/updates.js"></script>
+</body>
+</html>
